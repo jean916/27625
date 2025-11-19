@@ -1,31 +1,28 @@
+package id_27625.q2;
+import  java.util.Scanner;
+import  java.util.Date;
 
-
-package id_27625.q1;
-import java.sql.Date;
-import java.util.Scanner;
 public class Entity {
+
     private int id;
     private Date createdDate;
     private Date updatedDate;
 
     public Entity(int id, Date createdDate, Date updatedDate) {
-        if (id <= 0) throw new IllegalArgumentException(" id must be a positive integer");
-        if (createdDate == null) throw new IllegalArgumentException(" createdDate must not be null");
+        if (id <= 0) throw new IllegalArgumentException("ID > 0");
+        if (createdDate == null || updatedDate == null)
+            throw new IllegalArgumentException("Dates cannot be null");
 
         this.id = id;
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
     }
 
-    public int getId() {
-        return id;
+    public Entity() {
     }
 
-    public Date getCreatedDate() {
-        return createdDate;
-    }
+    public void printTicket() {
 
-    public Date getUpdatedDate() {
-        return updatedDate;
     }
 }
+
