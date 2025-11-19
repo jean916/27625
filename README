@@ -1,0 +1,28 @@
+ Java Assignment Project — Ukwizagira Jean Bosco (ID: 27625)
+
+Student Information
+Student Name: Ukwizagira Jean Bosco  
+Student ID: 27625  
+Course: Java Programming / Object-Oriented Programming  
+Academic Year: 2024–2025  
+
+
+ Project Overview
+
+This repository contains the full solution to a multi-question Java assignment.  
+The project follows **all required rules** given by the instructor:
+
+ Assignment Requirements (All Completed)
+1. Project name** uses student’s two given names → `UkwizagiraJeanBosco`  
+2. Package name uses student ID:`id_27625`  
+3. **Sub-packages** created for each question → `q1` to `q6`  
+4. **Every program prints the student ID (27625)** before output ends  
+5. Git repository initialized 
+6. GitHub username** must be student ID : `27625`  
+7. GitHub repository link submitted 
+8. Failure to follow rules results in 0 marks** → All rules respected ✔
+
+This project includes 6 Java systems (Q1–Q6), each built with classes, objects, and OOP principles.
+
+
+
