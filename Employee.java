@@ -1,28 +1,40 @@
-package q3;
+package id_27625.q6;
 
 
-    public class Employee extends Employer {
-        private String employeeName;
-        private double salary;
-        private String employeeTIN;
+    public class Employee extends Department {
+        private int employeeID;
+        private String fullName;
+        private String position;
+        private double baseSalary;
+        private boolean rssbRegistered;
 
-        public Employee(int id, String authorityName, String region, String email,
-                        String categoryName, double rate, String code,
-                        String tin, String taxpayerName, String address,
-                        String employerName, String employerTIN, String contact,
-                        String employeeName, double salary, String employeeTIN) throws TaxDataException {
-            super(id, authorityName, region, email, categoryName, rate, code, tin, taxpayerName, address, employerName, employerTIN, contact);
+        public Employee(int id, String orgName, String orgCode, String rssbNumber, String contactEmail,
+                        String deptName, String deptCode, String managerName,
+                        int employeeID, String fullName, String position, double baseSalary, boolean rssbRegistered)
+                throws PayrollDataException {
 
-            if (salary <= 0) throw new TaxDataException("Salary must be greater than 0.");
-            if (!employeeTIN.matches("\\d{9}")) throw new TaxDataException("Employee TIN must be 9 digits.");
+            super(id, orgName, orgCode, rssbNumber, contactEmail, deptName, deptCode, managerName);
 
-            this.employeeName = employeeName;
-            this.salary = salary;
-            this.employeeTIN = employeeTIN;
+            if (employeeID < 1000) throw new PayrollDataException("Employee ID must be >= 1000.");
+            if (baseSalary <= 0) throw new PayrollDataException("Base salary must be > 0.");
+
+            this.employeeID = employeeID;
+            this.fullName = fullName;
+            this.position = position;
+            this.baseSalary = baseSalary;
+            this.rssbRegistered = rssbRegistered;
         }
 
-        public double getSalary() {
-            return salary;
+        public double getBaseSalary() {
+            return baseSalary;
+        }
+
+        public boolean isRssbRegistered() {
+            return rssbRegistered;
+        }
+
+        public String getFullName() {
+            return fullName;
         }
     }
 
