@@ -1,32 +1,26 @@
-package id_27625.q1;
+package id_27625.q4;
 
-import java.sql.Date;
+    public class Product extends Supplier {
+        private String productName;
+        private double unitPrice;
+        private int quantity;
 
-public class Product extends Entity {
-    private String productName;
-    private double unityPrice;
-    private int stocklimit;
+        public Product(int id, String orgName, String address, String contactEmail,
+                       String deptName, String deptCode,
+                       String supplierName, String supplierTIN, String contact,
+                       String productName, double unitPrice, int quantity) throws ProcurementDataException {
+            super(id, orgName, address, contactEmail, deptName, deptCode, supplierName, supplierTIN, contact);
 
-    public Product(int id, Date createdDate, Date updatedDate, String productName, double unityPrice, int stocklimit) {
-        if(unityPrice <= 0)
-            throw new IllegalArgumentException("price must be greater than 0");
-        if(stocklimit <= 0)
-            throw new IllegalArgumentException("stocklimit must be greater than 0");
-        super(id, createdDate, updatedDate);
-        this.productName = productName;
-        this.unityPrice = unityPrice;
-        this.stocklimit = stocklimit;
+            if (unitPrice <= 0) throw new ProcurementDataException("Unit price must be > 0.");
+            if (quantity < 0) throw new ProcurementDataException("Quantity cannot be negative.");
+
+            this.productName = productName;
+            this.unitPrice = unitPrice;
+            this.quantity = quantity;
+        }
+
+        public double getTotalPrice() {
+            return unitPrice * quantity;
+        }
     }
 
-    public String getProductName() {
-        return productName;
-    }
-
-    public double getUnityPrice() {
-        return unityPrice;
-    }
-
-    public int getStocklimit() {
-        return stocklimit;
-    }
-}
